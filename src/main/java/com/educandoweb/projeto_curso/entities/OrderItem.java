@@ -3,6 +3,8 @@ package com.educandoweb.projeto_curso.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.boot.autoconfigure.condition.ConditionMessage.ItemsBuilder;
+
 import com.educandoweb.projeto_curso.entities.pk.OrderItemPK;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -82,5 +84,8 @@ public class OrderItem implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 	
+	public Double getSubTotal() {
+		return price * quantity;
+	}
 
 }
